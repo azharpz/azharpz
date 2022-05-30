@@ -1,0 +1,55 @@
+package webTest;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+import pageObject.LoadCategory;
+import pageObject.PickupandDropDetails;
+import pageObject.Scroll;
+import pageObject.SelectCity;
+import pageObject.Signin;
+import pageObject.TotalCalculation;
+import pageObject.TruckCategoryandSchedule;
+import resources.WebLaunch;
+
+public class TotalCalculationTest extends WebLaunch{
+	
+	@Test
+	public  void totalvalue() throws IOException, InterruptedException 
+    {
+	
+		WebDriver driver=capabilities();
+		SelectCity   homepage = new  SelectCity  ();
+		homepage.fromCity(driver);
+		homepage.toCity(driver);
+		homepage.requestaQuote(driver);
+		PickupandDropDetails   bookingpage = new  PickupandDropDetails  ();
+		bookingpage.pickupCity(driver);
+		bookingpage.dropCity(driver);
+		bookingpage.next(driver);
+		//bookingpage.viewpickupCity(driver);
+		TruckCategoryandSchedule   truckpage = new  TruckCategoryandSchedule  ();
+		truckpage.truckSelection(driver);
+		truckpage.trucktypeSelection(driver);
+		truckpage.dateSelection(driver);
+		truckpage.timeSelection(driver);
+		truckpage.next(driver);
+		LoadCategory   loadtype = new  LoadCategory  ();
+		loadtype.loadType(driver);
+		loadtype.packageType(driver);
+		loadtype.next(driver);
+		Signin   login = new  Signin  ();
+		login.signin(driver);
+		TotalCalculation   tv = new  TotalCalculation  ();
+        tv.taxdetails(driver);
+        tv.totalamount(driver);
+        tv.next(driver);
+
+
+
+		
+		
+    }	
+	}
