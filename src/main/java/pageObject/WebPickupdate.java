@@ -27,7 +27,7 @@ public void pickupDate(WebDriver driver) throws InterruptedException
 		for(int j=0; j<count; j++)
 		{
 		String texts=	driver.findElements(By.xpath("//button[contains(@aria-pressed,'false')]")).get(j).getText();
-			if(texts.equalsIgnoreCase("24"))
+			if(texts.equalsIgnoreCase("2"))
 			{
 				driver.findElements(By.xpath("//button[contains(@aria-pressed,'false')]")).get(j).click();
 				break;

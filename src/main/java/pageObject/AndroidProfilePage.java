@@ -24,6 +24,7 @@ public class AndroidProfilePage {
 		        softAssert.assertEquals(name, "azhar");
 		        System.out.println("customer name is   "  + name);
 		        
+		        
 
 		        String mobileno=driver.findElementById("com.s9truck.customer:id/txtUserMobile").getText();
 		        softAssert.assertEquals(mobileno, "1234567890");

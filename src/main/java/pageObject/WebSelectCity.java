@@ -35,7 +35,7 @@ public class WebSelectCity {
 
 	                System.out.println(fromcitycount);
 	 
-	                fromcity.get(fromcitycount-3).click();
+	                fromcity.get(fromcitycount-1).click();
 	 
 		                                 
 	    }
