@@ -6,10 +6,10 @@
      <listener  class-name="webTest.Listeners"/>
          
  </listeners>
-     <test  name="Zee Business Sanity test">
+     <test  name="S9 Sanity test">
    
  <classes>
- <class name="webTest.EmailLoginTest"/> 
+ <class name="webTest.WebLoginTest"/> 
 
   
            

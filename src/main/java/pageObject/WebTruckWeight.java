@@ -1,5 +1,9 @@
 package pageObject;
 
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
+
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -35,14 +39,26 @@ public void truckWeight(WebDriver driver) throws InterruptedException
 
 
 	
-		
+public Properties getpropertyObject() throws IOException
+{
 	
-		
-				
-
-
-
-
-	
-
+	FileReader reader=new FileReader("C:\\Users\\user\\eclipse-workspace\\RobustFramework2\\src\\main\\java\\properties\\EmailLoginTest.properties");  
+      
+    Properties p=new Properties();  
+    p.load(reader);  
+    
+    return p;
+      
+  //  System.out.println(p.getProperty("user"));  
+   // System.out.println(p.getProperty("password"));  
+      
 }
+public  String getweight() throws IOException
+{
+	return getpropertyObject().getProperty("weight");
+}
+
+
+	
+		
+		}

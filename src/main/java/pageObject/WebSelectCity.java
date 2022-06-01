@@ -1,6 +1,9 @@
 package pageObject;
 
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.List;
+import java.util.Properties;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -15,14 +18,14 @@ public class WebSelectCity {
 
 		static SoftAssert softAssert=new SoftAssert()	;	
 		
-	public void fromCity(WebDriver driver) throws InterruptedException
+	public void fromCity(WebDriver driver) throws InterruptedException, IOException
 		
 		{
 	 	Thread.sleep(5000);
 
 			
 		
-		driver.findElement(By.id("mat-input-0")).sendKeys("kotamita");
+		driver.findElement(By.id("mat-input-0")).sendKeys(getfromcity());
 
 	 	
 	 	Thread.sleep(3000);
@@ -40,10 +43,10 @@ public class WebSelectCity {
 		                                 
 	    }
 
-	public void toCity(WebDriver driver) throws InterruptedException
+	public void toCity(WebDriver driver) throws InterruptedException, IOException
 
 	{
-		 driver.findElement(By.id("mat-input-1")).sendKeys("vrccent");
+		 driver.findElement(By.id("mat-input-1")).sendKeys(gettocity());
 
 	    
 		//driver.findElement(By.xpath("(//div[@class='input-fields'])[2]")).sendKeys("vrccent");
@@ -75,11 +78,36 @@ public class WebSelectCity {
 			
 		
 			
-					
+	public Properties getpropertyObject() throws IOException
+	{
+		
+		FileReader reader=new FileReader("C:\\Users\\user\\eclipse-workspace\\RobustFramework2\\src\\main\\java\\properties\\EmailLoginTest.properties");  
+	      
+	    Properties p=new Properties();  
+	    p.load(reader);  
+	    
+	    return p;
+	      
+	  //  System.out.println(p.getProperty("user"));  
+	   // System.out.println(p.getProperty("password"));  
+	      
+	}
+	public  String getfromcity() throws IOException
+	{
+		return getpropertyObject().getProperty("fromcity");
+	}
+	
+	public  String gettocity() throws IOException
+	{
+		return getpropertyObject().getProperty("tocity");
+	}
+
+		}
+		
 
 
 
 
 		
 
-}
+
