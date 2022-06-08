@@ -19,7 +19,7 @@ public class WebLoginTest extends WebLaunch{
 	public  void login() throws IOException, InterruptedException 
     {
 	
-		WebDriver driver=capabilities();
+		 WebDriver driver=capabilities();
 		 WebSelectCity   homepage = new  WebSelectCity  ();
 		 WebPickupdate   dateselection = new  WebPickupdate  ();
 		 WebTruckCategory   truckselection = new  WebTruckCategory  ();

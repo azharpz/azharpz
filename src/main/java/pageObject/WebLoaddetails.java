@@ -25,7 +25,7 @@ public void loaddetails(WebDriver driver) throws InterruptedException
    System.out.println("no of commercialtypes is   "  + commercialtypes);
    
   
-	 driver.findElements(By.xpath("//mat-option[contains(@aria-disabled,'false')] ")).get(2).click();
+	 driver.findElements(By.xpath("//mat-option[contains(@aria-disabled,'false')] ")).get(1).click();
 	 
      driver.findElement(By.xpath("//button[.='Next'] ")).click();
 

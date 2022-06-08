@@ -1,20 +1,36 @@
 package pageObject;
 
+import java.io.FileInputStream;
+import java.util.Properties;
+
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.testng.asserts.SoftAssert;
 
-public class WebTruckdetailsreview {
+import resources.WebLaunch;
+
+public class WebTruckdetailsreview    {
 	
 	private static  Logger logger = LogManager.getLogger(LoginPage.class.getName());
 
-	static SoftAssert softAssert=new SoftAssert()	;	
+	static SoftAssert softAssert=new SoftAssert()	;
+	  //WebDriver driver;
+
 	
-public void gettruckdetails(WebDriver driver) throws InterruptedException
+
+
+    FileInputStream reader;
+    Properties p;
+  //  String price=driver.findElement(By.xpath("//span[@class='truckPrice-area'] ")).getText();
 	
-	{
+    public void gettruckdetails(WebDriver driver) throws InterruptedException
+
+{
+	
+	// this.driver = driver;
 
 	Thread.sleep(7000);
      
@@ -62,11 +78,13 @@ public void gettruckdetails(WebDriver driver) throws InterruptedException
     	
     softAssert.assertEquals(truckweight, loadweight);
     
+   // ElementNames el=new ElementNames();
     
-    String price=	driver.findElement(By.xpath("//span[@class='truckPrice-area'] ")).getText();
+    
+   String price=	driver.findElement(By.xpath("//span[@class='truckPrice-area'] ")).getText();
+
      
-     
-     System.out.println("price   "  + price);
+    System.out.println("price   "  +price);
      
      Thread.sleep(3000);
      

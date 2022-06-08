@@ -2,25 +2,51 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-06-02T04:28:41 IST" name="Default suite" finished-at="2022-06-02T04:29:35 IST" duration-ms="54192">
+  <suite started-at="2022-06-09T03:05:18 IST" name="Default suite" finished-at="2022-06-09T03:06:56 IST" duration-ms="97597">
     <groups>
     </groups>
-    <test started-at="2022-06-02T04:28:41 IST" name="Default test" finished-at="2022-06-02T04:29:35 IST" duration-ms="54192">
-      <class name="webTest.WebLoginTest">
-        <test-method signature="login()[pri:0, instance:webTest.WebLoginTest@d6e7bab]" started-at="2022-06-02T04:28:41 IST" name="login" finished-at="2022-06-02T04:29:35 IST" duration-ms="54079" status="FAIL">
-          <exception class="java.lang.IndexOutOfBoundsException">
+    <test started-at="2022-06-09T03:05:18 IST" name="Default test" finished-at="2022-06-09T03:06:56 IST" duration-ms="97597">
+      <class name="webTest.WebLoaddetailTest">
+        <test-method signature="loaddetails()[pri:0, instance:webTest.WebLoaddetailTest@3972a855]" started-at="2022-06-09T03:05:19 IST" name="loaddetails" finished-at="2022-06-09T03:06:56 IST" duration-ms="97384" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Index 3 out of bounds for length 3]]>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='mat-input-3']"}
+  (Session info: chrome=102.0.5005.63)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'USER-PC', ip: '192.168.139.64', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.63, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:64100}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a907f0e7a9e048563bfca038112ade9e
+*** Element info: {Using=xpath, value=//input[@id='mat-input-3']}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.IndexOutOfBoundsException: Index 3 out of bounds for length 3
-at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
-at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
-at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)
-at java.base/java.util.Objects.checkIndex(Objects.java:359)
-at java.base/java.util.ArrayList.get(ArrayList.java:427)
-at pageObject.WebTruckWeight.truckWeight(WebTruckWeight.java:35)
-at webTest.WebLoginTest.login(WebLoginTest.java:38)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='mat-input-3']"}
+  (Session info: chrome=102.0.5005.63)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'USER-PC', ip: '192.168.139.64', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.63, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:64100}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a907f0e7a9e048563bfca038112ade9e
+*** Element info: {Using=xpath, value=//input[@id='mat-input-3']}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at pageObject.WebLogin.login(WebLogin.java:36)
+at webTest.WebLoaddetailTest.loaddetails(WebLoaddetailTest.java:45)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -51,11 +77,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.IndexOutOfBoundsException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-      </class> <!-- webTest.WebLoginTest -->
+        </test-method> <!-- loaddetails -->
+      </class> <!-- webTest.WebLoaddetailTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

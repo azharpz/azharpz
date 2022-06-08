@@ -3,7 +3,9 @@ package resources;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.Date;
+import java.util.Optional;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -12,6 +14,11 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.devtools.DevTools;
+import org.openqa.selenium.devtools.DevTools;
+import org.openqa.selenium.devtools.network.Network;
+import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 public class WebLaunch {
 	
@@ -20,15 +27,31 @@ public class WebLaunch {
 		// TODO Auto-generated method stub
 	System.setProperty("webdriver.chrome.driver", "D:\\Automationcode\\RobustFramework\\src\\main\\java\\utilities\\chromedriver.exe");
 	 
+	
    
-		WebDriver driver=new ChromeDriver();
+	WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
        // driver.get("https://truckglobe.in/");
-        driver.get("http://s9trucks.com/profile");
-
+      
+       driver.get("http://s9trucks.com");
+    
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        return driver;
-               
+       return driver;
+        
+        
+      //  ChromeOptions options = new ChromeOptions();
+      //  options.addArguments("--start-maximized");
+     //   options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+      //  options.setExperimentalOption("useAutomationExtension", false);
+     // driver1 = new ChromeDriver(options);
+     // devTools = driver1.getDevTools();
+      //  devTools.createSession();
+     //   devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.of(100000000)));
+     //   devTools.send(Network.setCacheDisabled(true));
+     //   devTools.addListener(Network.responseReceived(), responseReceived -> Assert.assertEquals(false, responseReceived.getResponse().getFromDiskCache()));
+     //   driver1.get("https://www.google.com/");
+     //   devTools.send(Network.clearBrowserCache());
+             //  return driver1;
 	}
 	
 	public WebDriver  getScreenshot(String testCaseName,WebDriver driver1 ) throws IOException {

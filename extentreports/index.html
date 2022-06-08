@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Zee Business Results</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Jun 2, 2022 12:49:10 AM</span></a>
+<a href="#"><span class="badge badge-primary">Jun 2, 2022 04:00:05 PM</span></a>
 </li>
 </ul>
 </div>
@@ -86,7 +86,7 @@
           <div class="test-detail">
             <p class="name">login</p>
             <p class="text-sm">
-              <span>12:49:12 AM</span> / <span>00:00:37:134</span>
+              <span>4:00:08 PM</span> / <span>00:03:27:979</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -95,9 +95,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-fail">login</h5>
-<span class='badge badge-success'>06.02.2022 12:49:12 AM</span>
-<span class='badge badge-danger'>06.02.2022 12:49:49 AM</span>
-<span class='badge badge-default'>00:00:37:134</span>
+<span class='badge badge-success'>06.02.2022 4:00:08 PM</span>
+<span class='badge badge-danger'>06.02.2022 4:03:36 PM</span>
+<span class='badge badge-default'>00:03:27:979</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -109,33 +109,19 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>12:49:49 AM</td>
+        <td>4:03:36 PM</td>
         <td>
-          <textarea readonly class="code-block">org.openqa.selenium.WebDriverException: chrome not reachable
-  (Session info: chrome=102.0.5005.63)
+          <textarea readonly class="code-block">org.openqa.selenium.NoSuchElementException: Cannot locate an element using xpath=//span[contains(@style,'text-transform: capitalize;')]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'USER-PC', ip: '192.168.244.64', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '15.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.63, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:52047}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 1b237fd6a92812dd7e9430a68c735f78
-*** Element info: {Using=id, value=mat-input-0}
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-	at org.openqa.selenium.By$ById.findElement(By.java:188)
+System info: host: 'USER-PC', ip: '192.168.137.64', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '15.0.2'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:327)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at pageObject.WebSelectCity.fromCity(WebSelectCity.java:25)
-	at webTest.WebLoginTest.login(WebLoginTest.java:34)
+	at pageObject.WebLogin.login(WebLogin.java:39)
+	at webTest.WebLoginTest.login(WebLoginTest.java:40)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -170,10 +156,10 @@ Session ID: 1b237fd6a92812dd7e9430a68c735f78
       </tr>
       <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>12:49:49 AM</td>
+        <td>4:03:36 PM</td>
         <td>
           <textarea readonly class="code-block">java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "driver" is null
-	at resources.WebLaunch.getScreenshot(WebLaunch.java:42)
+	at resources.WebLaunch.getScreenshot(WebLaunch.java:44)
 	at webTest.Listeners.onTestFailure(Listeners.java:51)
 	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:96)
 	at org.testng.internal.TestInvoker.runTestResultListener(TestInvoker.java:220)
@@ -250,7 +236,7 @@ Session ID: 1b237fd6a92812dd7e9430a68c735f78
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>00:49:12 AM</td>
+<td>16:00:08 PM</td>
 <td>
 <a href="#" class="linked" test-id='1' id='1'>login</a>
 </td>
@@ -264,12 +250,12 @@ Session ID: 1b237fd6a92812dd7e9430a68c735f78
 <span class="meta">
 <span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">org.openqa.selenium.WebDriverException</p>
+<p class="name">org.openqa.selenium.NoSuchElementException</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>org.openqa.selenium.WebDriverException</h4>
+<h4>org.openqa.selenium.NoSuchElementException</h4>
 <span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -283,7 +269,7 @@ Session ID: 1b237fd6a92812dd7e9430a68c735f78
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>00:49:12 AM</td>
+<td>16:00:08 PM</td>
 <td>
 <a href="#" class="linked" test-id='1' id='1'>login</a>
 </td>
@@ -305,13 +291,13 @@ Session ID: 1b237fd6a92812dd7e9430a68c735f78
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Jun 2, 2022 12:49:10 AM</h3>
+<h3>Jun 2, 2022 04:00:05 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Jun 2, 2022 12:49:49 AM</h3>
+<h3>Jun 2, 2022 04:03:37 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -381,7 +367,7 @@ Session ID: 1b237fd6a92812dd7e9430a68c735f78
 </div></div>
 <script>
 var timeline = {
-"login":37.134
+"login":207.979
 };
 </script>
 <div class="row">
