@@ -31,7 +31,7 @@ public void priceDetails(WebDriver driver) throws InterruptedException, IOExcept
 
 	Thread.sleep(3000);
 	//JavascriptExecutor js = (JavascriptExecutor) driver;
-//	js.executeScript("window.scrollBy(0,450)", "");
+	//js.executeScript("window.scrollBy(0,550)", "");
 	
 	String actualprice=driver.findElement(By.xpath("(//div[@class='card-details-right'])[1]")).getText();
 	//System.out.println("Expected estimateprice displayed as  "  +estimateprice);
@@ -58,7 +58,7 @@ public void priceDetails(WebDriver driver) throws InterruptedException, IOExcept
 		softAssert.assertEquals(tax1percentageof12, taxonevalue);
 		
 		
-		String tax2=driver.findElement(By.xpath("(//div[@class='card-details-right'])[3]")).getText();
+		String tax2=driver.findElement(By.xpath("(//div[@class='card-details-right'])[2]")).getText();
 		   // System.out.println("tax1 displayed as  "  + tax1);
 
 			String[] strArray1 = tax2.split("₹");
@@ -84,12 +84,14 @@ public void priceDetails(WebDriver driver) throws InterruptedException, IOExcept
 			System.out.println("totalamount displayed as  "  +totalamount);
 			
 			int expectedtotalamount = (int) (totalactualprice+tax1percentageof12+tax2percentageof2andhalf);
+			System.out.println("expectedtotalamount displayed as  "  +expectedtotalamount);
+
 			softAssert.assertEquals(expectedtotalamount, totalamount);
 			
-			String payingamount=driver.findElement(By.xpath("(//div[@class='card-details-right'])[6]")).getText();
+			String payingamount=driver.findElement(By.xpath("//div[@class='col-sm-6']//div[6]")).getText();
 			//System.out.println("Expected estimateprice displayed as  "  +estimateprice);
 
-			String[] strArray8 = totalprice.split("₹");
+			String[] strArray8 = payingamount.split("₹");
 				
 			String payingamounts = strArray8[1].trim();
 			//String[] strArray9 = payingamounts.split("₹");
@@ -98,23 +100,32 @@ public void priceDetails(WebDriver driver) throws InterruptedException, IOExcept
 			System.out.println("amounttobepaid displayed as  "  +amounttobepaid);
 			
 			
+			float paidamountpercentageof20 =expectedtotalamount*20/100 ;
+			System.out.println("Expected paid  displayed as  with 20%  is "  +paidamountpercentageof20);
+			
+			
 			String balanceamount=driver.findElement(By.xpath("(//span[position()=2])[13]")).getText();
 			//System.out.println("Expected estimateprice displayed as  "  +estimateprice);
 
-			String[] strArray9 = totalprice.split("₹");
+			String[] strArray9 = balanceamount.split("₹");
 				
 			String balance = strArray9[1].trim();
 			//String[] strArray9 = payingamounts.split("₹");
-			int balanceprice = (int)Float.parseFloat(balance);
-			String[] strArray91 = totalprice.split("will");
-			String balances = strArray91[1].trim();
+			//int balanceprice = (int)Float.parseFloat(balance);
+			//String[] strArray91 = balance.split("will");
+			//String balances = strArray91[1].trim();
+		//	int balanceprice = (int)Float.parseFloat(balances);
+
 
 				
-			System.out.println("balanceamount displayed as  "  +balances);
-
+			System.out.println("balanceamount displayed as  "  +balance);
+			Thread.sleep(3000);
 			
-		     driver.findElement(By.xpath("(//span[position()=2])[11] ")).click();
-		     driver.findElement(By.xpath("(//span[position()=2])[14] ")).click();
+		     driver.findElement(By.xpath("//label[@for='mat-checkbox-1-input']//span[@class='mat-checkbox-inner-container'] ")).click();
+		     driver.findElement(By.xpath("//label[@for='mat-checkbox-2-input']//span[@class='mat-checkbox-inner-container'] ")).click();
+		     
+		     driver.findElement(By.xpath("//button[normalize-space()='Pay Now']")).click();
+
 
 			
 			
@@ -139,12 +150,14 @@ Thread.sleep(3000);
 
 
 		
-driver.findElement(By.xpath("//div[@class='mat-form-field-flex ng-tns-c59-87']")).sendKeys(pickup());
-driver.findElement(By.xpath("//div[@class='mat-form-field-flex ng-tns-c59-88']")).sendKeys(pickupnumber());
-driver.findElement(By.xpath("//input[@id='mat-input-28']")).sendKeys(drop());
-driver.findElement(By.xpath("//div[@class='mat-form-field-flex ng-tns-c59-90']")).sendKeys(dropupnumber());
+driver.findElement(By.xpath("//input[@data-placeholder='Pickup Name*']")).sendKeys(pickup());
+driver.findElement(By.xpath("//input[@formcontrolname='pickupMobile']")).sendKeys(pickupnumber());
+driver.findElement(By.xpath("//input[@data-placeholder='Dropup Name*']")).sendKeys(drop());
+driver.findElement(By.xpath("//input[@formcontrolname='dropupMobile']")).sendKeys(dropupnumber());
 
-driver.findElement(By.xpath("//button[normalize-space()='Pay Now']")).click();
+JavascriptExecutor js = (JavascriptExecutor) driver;
+js.executeScript("window.scrollBy(0,150)", "");
+
 
 
 }

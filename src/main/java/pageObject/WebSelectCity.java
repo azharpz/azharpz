@@ -2,6 +2,7 @@ package pageObject;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 
@@ -33,10 +34,21 @@ public class WebSelectCity {
 		 List<WebElement>	fromcity=  driver.findElements(By.xpath("//div[@class='pac-container pac-logo']/div"));
 
 		 
+		 Iterator<WebElement> itr=fromcity.iterator();
+		 int i=1;
+		 String value="";
+		 while(itr.hasNext())
+		 {
+			 WebElement element=itr.next();
+			 value=element.getText();
+			 System.out.println("name of city is   "  + value);
+		 }
+
+		 
 				
 	               int fromcitycount= fromcity.size();
 
-	                System.out.println(fromcitycount);
+	       	    System.out.println("no of fromcity is   "  + fromcitycount);
 	 
 	                fromcity.get(fromcitycount-1).click();
 	 
@@ -54,8 +66,21 @@ public class WebSelectCity {
 
 		// List<WebElement>	dates=  driver.findElements(By.xpath("(//div[@class='pac-container pac-logo'])[2]"));
 		 List<WebElement>	tocity=  driver.findElements(By.xpath("//div[@class='pac-container pac-logo']/div"));
+		 
+		 
+		 Iterator<WebElement> itr=tocity.iterator();
+		 int i=1;
+		 String value="";
+		 while(itr.hasNext())
+		 {
+			 WebElement element=itr.next();
+			 value=element.getText();
+			 System.out.println("name of tocity is   "  + value);
+		 }
+		 
+		 
 	    int tocitycounts= tocity.size();
-	    System.out.println(tocitycounts);
+	    System.out.println("no of tocity is   "  + tocitycounts);
 	    tocity.get(tocitycounts-2).click();
 
 
