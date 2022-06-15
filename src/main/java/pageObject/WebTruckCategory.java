@@ -53,16 +53,4 @@ public void trucktype(WebDriver driver) throws InterruptedException
 	              
 }
 
-
-	
-		
-	
-		
-				
-
-
-
-
-	
-
 }

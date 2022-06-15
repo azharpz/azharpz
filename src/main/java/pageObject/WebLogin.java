@@ -6,6 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+
+import resources.Data;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -16,15 +19,13 @@ import java.io.Reader;
 import java.util.Properties;  
 
 
-public class WebLogin {
+public class WebLogin extends Data{
 
 	private static  Logger logger = LogManager.getLogger(LoginPage.class.getName());
 
 	static SoftAssert softAssert=new SoftAssert()	;
 	
 	
-	    FileInputStream reader;
-	    Properties p;
 	
 	
 public void login(WebDriver driver) throws InterruptedException, IOException
@@ -50,25 +51,7 @@ public void login(WebDriver driver) throws InterruptedException, IOException
 
 	
 	
-		public Properties getpropertyObject() throws IOException
-		{
-			//reader=new FileInputStream(System.getProperty("user.dir")+"\\EmailLoginTest.properties");
-			//p.load(reader);
-			//p.getProperty("MobileNumber");
-			
-		//return p;
-			
-			FileReader reader=new FileReader("C:\\Users\\user\\eclipse-workspace\\RobustFramework2\\src\\main\\java\\properties\\EmailLoginTest.properties");  
-		      
-		   Properties p=new Properties();  
-		   p.load(reader);  
-		    
-		    return p;
-		      
-		  //  System.out.println(p.getProperty("user"));  
-		   // System.out.println(p.getProperty("password"));  
-              
-	}
+	
 		public  String getmobileno() throws IOException
 		{
 			return getpropertyObject().getProperty("MobileNumber");

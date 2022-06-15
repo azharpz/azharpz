@@ -22,9 +22,7 @@ public class WebTripsPage {
 	static SoftAssert softAssert=new SoftAssert()	;
 	
 	
-	    FileInputStream reader;
-	    Properties p;
-	
+	  	
 	
 public void allTrips(WebDriver driver) throws InterruptedException, IOException
 

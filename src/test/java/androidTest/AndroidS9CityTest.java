@@ -28,8 +28,7 @@ public class AndroidS9CityTest extends AndroidLaunch  {
        AndroidS9selectcities.fromCity(driver);
        AndroidS9selectcities.toCity(driver);
 
+}
+	
 
-
-		
-    }	
 	}

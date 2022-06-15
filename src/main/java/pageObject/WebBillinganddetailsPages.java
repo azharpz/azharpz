@@ -12,15 +12,16 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.asserts.SoftAssert;
 
-public class WebBillinganddetailsPages  {
+import resources.Data;
+
+public class WebBillinganddetailsPages extends Data  {
 	
 	private static  Logger logger = LogManager.getLogger(LoginPage.class.getName());
 
 	static SoftAssert softAssert=new SoftAssert()	;
 	
 	
-	    FileInputStream reader;
-	    Properties p;
+	 
 	
 	
 public void priceDetails(WebDriver driver) throws InterruptedException, IOException
@@ -164,25 +165,7 @@ js.executeScript("window.scrollBy(0,150)", "");
 
 	
 	
-		public Properties getpropertyObject() throws IOException
-		{
-			//reader=new FileInputStream(System.getProperty("user.dir")+"\\EmailLoginTest.properties");
-			//p.load(reader);
-			//p.getProperty("MobileNumber");
-			
-		//return p;
-			
-			FileReader reader=new FileReader("C:\\Users\\user\\eclipse-workspace\\RobustFramework2\\src\\main\\java\\properties\\EmailLoginTest.properties");  
-		      
-		   Properties p=new Properties();  
-		   p.load(reader);  
-		    
-		    return p;
-		      
-		  //  System.out.println(p.getProperty("user"));  
-		   // System.out.println(p.getProperty("password"));  
-              
-	}
+	
 		public  String pickup() throws IOException
 		{
 			return getpropertyObject().getProperty("pickupname");

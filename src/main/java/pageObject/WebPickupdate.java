@@ -12,7 +12,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 
-public class WebPickupdate {
+import resources.Data;
+
+public class WebPickupdate extends Data {
 
 	private static  Logger logger = LogManager.getLogger(LoginPage.class.getName());
 
@@ -38,20 +40,7 @@ public void pickupDate(WebDriver driver) throws InterruptedException, IOExceptio
 			}   
 		
 		}
-public Properties getpropertyObject() throws IOException
-{
-	
-	FileReader reader=new FileReader("C:\\Users\\user\\eclipse-workspace\\RobustFramework2\\src\\main\\java\\properties\\EmailLoginTest.properties");  
-      
-    Properties p=new Properties();  
-    p.load(reader);  
-    
-    return p;
-      
-  //  System.out.println(p.getProperty("user"));  
-   // System.out.println(p.getProperty("password"));  
-      
-}
+
 public  String getdate() throws IOException
 {
 	return getpropertyObject().getProperty("PickDate");

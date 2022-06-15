@@ -13,7 +13,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 
-public class WebSelectCity {
+import resources.Data;
+
+public class WebSelectCity extends Data{
 	
 		private static  Logger logger = LogManager.getLogger(LoginPage.class.getName());
 
@@ -102,21 +104,7 @@ public class WebSelectCity {
 		//	System.setProperty("webdriver.chrome.driver", "D:\\Automation\\chromedriver/chromedriver.exe");
 			
 		
-			
-	public Properties getpropertyObject() throws IOException
-	{
-		
-		FileReader reader=new FileReader("C:\\Users\\user\\eclipse-workspace\\RobustFramework2\\src\\main\\java\\properties\\EmailLoginTest.properties");  
-	      
-	    Properties p=new Properties();  
-	    p.load(reader);  
-	    
-	    return p;
-	      
-	  //  System.out.println(p.getProperty("user"));  
-	   // System.out.println(p.getProperty("password"));  
-	      
-	}
+	
 	public  String getfromcity() throws IOException
 	{
 		return getpropertyObject().getProperty("fromcity");

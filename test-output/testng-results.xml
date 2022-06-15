@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-06-10T04:53:48 IST" name="Default suite" finished-at="2022-06-10T04:55:27 IST" duration-ms="99244">
+  <suite started-at="2022-06-14T00:12:53 IST" name="Default suite" finished-at="2022-06-14T00:13:43 IST" duration-ms="50835">
     <groups>
     </groups>
-    <test started-at="2022-06-10T04:53:48 IST" name="Default test" finished-at="2022-06-10T04:55:27 IST" duration-ms="99244">
-      <class name="webTest.WebBillingandpickupdetailTest">
-        <test-method signature="loaddetails()[pri:0, instance:webTest.WebBillingandpickupdetailTest@3972a855]" started-at="2022-06-10T04:53:48 IST" name="loaddetails" finished-at="2022-06-10T04:55:27 IST" duration-ms="99172" status="PASS">
+    <test started-at="2022-06-14T00:12:53 IST" name="Default test" finished-at="2022-06-14T00:13:43 IST" duration-ms="50835">
+      <class name="androidTest.AndroidS9TruckCategoryTest">
+        <test-method signature="selectTruckTypes()[pri:0, instance:androidTest.AndroidS9TruckCategoryTest@24fcf36f]" started-at="2022-06-14T00:12:53 IST" name="selectTruckTypes" finished-at="2022-06-14T00:13:43 IST" duration-ms="50679" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loaddetails -->
-      </class> <!-- webTest.WebBillingandpickupdetailTest -->
+        </test-method> <!-- selectTruckTypes -->
+      </class> <!-- androidTest.AndroidS9TruckCategoryTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
