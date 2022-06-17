@@ -31,6 +31,8 @@ public class AndroidS9TruckCategoryTest  extends AndroidLaunch  {
        AndroidS9TruckCategory.truckType(driver);
        AndroidS9TruckCategory.truckWeight(driver);
        AndroidS9TruckCategory.dateSelect(driver);
+       AndroidS9TruckCategory.dateSelect(driver);
+
 
        
 
