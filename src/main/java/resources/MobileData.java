@@ -8,10 +8,10 @@ import java.util.Properties;
 
 public class MobileData {
 
-	
+	static Properties p1=new Properties(); 
 
     FileInputStream reader;
-    Data p;
+     Data p;
 	
 	//public static Properties getpropertyObject() throws IOException
 	//{
@@ -33,18 +33,28 @@ public class MobileData {
           
 //}
 	
-	public static Properties getpropertyObject() throws IOException
+	//public static Properties getpropertyObject() throws IOException
+	//{
+		  //  Properties p=new Properties();  
+		   // String path=System.getProperty("user.dir");
+			//InputStream reader=new FileInputStream(path+"\\src\\main\\java\\properties\\MobileLoginTest.properties");  
+
+		//   p.load(reader);  
+		    
+		 //   return p;
+
+          
+//}
+    public static Properties getpropertyObject() throws IOException
 	{
-		    Properties p=new Properties();  
+		  //  Properties p=new Properties();  
 		    String path=System.getProperty("user.dir");
 			InputStream reader=new FileInputStream(path+"\\src\\main\\java\\properties\\MobileLoginTest.properties");  
 
-		   p.load(reader);  
+		   p1.load(reader);  
 		    
-		    return p;
+		    return p1;
 
-          
-}
-	
+          }
 	
 }

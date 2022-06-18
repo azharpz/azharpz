@@ -11,9 +11,9 @@ import org.openqa.selenium.WebDriver;
 public class Data {
 
 	
-
+	Properties p=new Properties();  
     FileInputStream reader;
-    Data p;
+    //Data p;
 	
 //	public Properties getpropertyObject() throws IOException
 //	{
@@ -37,7 +37,7 @@ public class Data {
 	
 	public Properties getpropertyObject() throws IOException
 	{
-		    Properties p=new Properties();  
+		  //  Properties p=new Properties();  
 		    String path=System.getProperty("user.dir");
 			InputStream reader=new FileInputStream(path+"\\src\\main\\java\\properties\\EmailLoginTest.properties");  
 
@@ -45,7 +45,6 @@ public class Data {
 		    
 		    return p;
 
-          
-}
+          }
 	
 }

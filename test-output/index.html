@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\user\AppData\Local\Temp\testng-eclipse-926146552\testng-customsuite.xml</span>
+                    <span>C:\Users\user\AppData\Local\Temp\testng-eclipse--679946652\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -104,7 +104,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="androidTest.AndroidS9TruckCategoryTest" class="method navigator-link" hash-for-method="selectTruckTypes">selectTruckTypes</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="androidTest.AndroidDriverProfileTest" class="method navigator-link" hash-for-method="getProfile">getProfile</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -122,21 +122,22 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">androidTest.AndroidS9TruckCategoryTest</span>
+              <span class="class-name">androidTest.AndroidDriverProfileTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="selectTruckTypes">
-                  </a> <!-- selectTruckTypes -->
-                  <span class="method-name">selectTruckTypes</span>
-                  <div class="stack-trace">org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+                  <a name="getProfile">
+                  </a> <!-- getProfile -->
+                  <span class="method-name">getProfile</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;USER-PC&apos;, ip: &apos;192.168.170.64&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;15.0.2&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.s9truck.customer.ui.act..., appPackage: com.s9truck.customer, automationName: UiAutomator2, databaseEnabled: false, desired: {appActivity: com.s9truck.customer.ui.act..., appPackage: com.s9truck.customer, automationName: UiAutomator2, deviceName: Mi A3, noReset: true, platform: ANDROID, platformName: android, platformVersion: 11}, deviceApiLevel: 30, deviceManufacturer: Xiaomi, deviceModel: Mi A3, deviceName: 20b6775e96f7, deviceScreenDensity: 320, deviceScreenSize: 720x1560, deviceUDID: 20b6775e96f7, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, noReset: true, pixelRatio: 2, platform: ANDROID, platformName: Android, platformVersion: 11, statBarHeight: 70, takesScreenshot: true, viewportRect: {height: 1341, left: 0, top: 70, width: 720}, warnings: {}, webStorageEnabled: false}
-Session ID: af33150d-05e3-4043-896e-81d433397056
-*** Element info: {Using=id, value=com.s9truck.customer:id/imgTruck}
+Capabilities {appActivity: com.s9truck.driver.ui.activ..., appPackage: com.s9truck.driver, automationName: UiAutomator2, databaseEnabled: false, desired: {appActivity: com.s9truck.driver.ui.activ..., appPackage: com.s9truck.driver, automationName: UiAutomator2, deviceName: Mi A3, noReset: true, platform: ANDROID, platformName: android, platformVersion: 11}, deviceApiLevel: 30, deviceManufacturer: Xiaomi, deviceModel: Mi A3, deviceName: 20b6775e96f7, deviceScreenDensity: 320, deviceScreenSize: 720x1560, deviceUDID: 20b6775e96f7, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, noReset: true, pixelRatio: 2, platform: ANDROID, platformName: Android, platformVersion: 11, statBarHeight: 70, takesScreenshot: true, viewportRect: {height: 1341, left: 0, top: 70, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: dcdc38a6-ae50-4658-8760-7e3c5caefb71
+*** Element info: {Using=xpath, value=//android.widget.FrameLayout[@content-desc=&quot;Account&quot;]/android.widget.FrameLayout/android.widget.ImageView}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -155,12 +156,12 @@ Session ID: af33150d-05e3-4043-896e-81d433397056
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:69)
-	at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
-	at pageObject.AndroidS9TruckCategory.truckType(AndroidS9TruckCategory.java:24)
-	at androidTest.AndroidS9TruckCategoryTest.selectTruckTypes(AndroidS9TruckCategoryTest.java:31)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:151)
+	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
+	at pageObject.AndroidBottomMenu.account(AndroidBottomMenu.java:13)
+	at androidTest.AndroidDriverProfileTest.getProfile(AndroidDriverProfileTest.java:30)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -198,7 +199,7 @@ Session ID: af33150d-05e3-4043-896e-81d433397056
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\user\AppData\Local\Temp\testng-eclipse-926146552\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\user\AppData\Local\Temp\testng-eclipse--679946652\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -207,7 +208,7 @@ Session ID: af33150d-05e3-4043-896e-81d433397056
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;androidTest.AndroidS9TruckCategoryTest&quot;/&gt;
+      &lt;class name=&quot;androidTest.AndroidDriverProfileTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -249,14 +250,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'selectTruckTypes')
-data.setCell(0, 2, 'androidTest.AndroidS9TruckCategoryTest')
-data.setCell(0, 3, 41829);
+data.setCell(0, 1, 'getProfile')
+data.setCell(0, 2, 'androidTest.AndroidDriverProfileTest')
+data.setCell(0, 3, 28548);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 41 seconds</span>
+              <span class="suite-total-time">Total running time: 28 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -282,11 +283,11 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">androidTest.AndroidS9TruckCategoryTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">androidTest.AndroidDriverProfileTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">selectTruckTypes</span>
+                <span class="method-name">getProfile</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->

@@ -1,5 +1,6 @@
 package resources;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -8,12 +9,12 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class DriverAppLaunch {
+public class DriverAppLaunch extends MobileData{
 
 	private static AndroidDriver driver;
 
 	@SuppressWarnings("rawtypes")
-	public static AndroidDriver capabilities() throws MalformedURLException {
+	public static AndroidDriver capabilities() throws IOException {
 		// TODO Auto-generated method stub
 		
 		 DesiredCapabilities capability=new DesiredCapabilities();
@@ -22,9 +23,9 @@ public class DriverAppLaunch {
 
 
 
-		    capability.setCapability(MobileCapabilityType.DEVICE_NAME, "Mi A3");
+		    capability.setCapability(MobileCapabilityType.DEVICE_NAME, getdevice());
 		    capability.setCapability(MobileCapabilityType.PLATFORM, "Android");
-		    capability.setCapability(MobileCapabilityType.PLATFORM_VERSION, "11");
+		    capability.setCapability(MobileCapabilityType.PLATFORM_VERSION, getversion());
 		 capability.setCapability("automationName", "UiAutomator2");
 		// capability.setCapability("noSign", "true");
 		capability.setCapability("noReset", "true");
@@ -43,6 +44,19 @@ public class DriverAppLaunch {
 	    return driver1;
 	   
 	}
+	
+	public static  String getdevice() throws IOException
+	{
+		return getpropertyObject().getProperty("devicename");
+	}
+
+
+	public static  String getversion() throws IOException
+	{
+		return getpropertyObject().getProperty("version");
+	}
+
+	
 	
 	
 

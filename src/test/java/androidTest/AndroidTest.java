@@ -1,5 +1,6 @@
 package androidTest;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -17,7 +18,7 @@ public class AndroidTest extends AndroidLaunch  {
 
 //	public static void main(String[] args) throws MalformedURLException {
 	@Test
-	public void TC_1A_AndroidLogin() throws MalformedURLException, InterruptedException {
+	public void TC_1A_AndroidLogin() throws InterruptedException, IOException {
 
 		SoftAssert softAssert = new SoftAssert();
 
