@@ -14,7 +14,7 @@ import resources.AdminLaunch;
 public class TrucksTest extends AdminLaunch{
 	
 	@Test
-	public  void login() throws IOException, InterruptedException 
+	public  void addtruck() throws IOException, InterruptedException 
     {
 	
 		 WebDriver driver=capabilities();
@@ -23,7 +23,7 @@ public class TrucksTest extends AdminLaunch{
          LeftmenuPage menu = PageFactory.initElements(driver, LeftmenuPage.class); 
          TrucksPage truck = PageFactory.initElements(driver, TrucksPage.class); 
 
-		 
+         
 			
          login.Enterlogincredential(driver);
          login.Submitlogin(driver);
@@ -33,17 +33,20 @@ public class TrucksTest extends AdminLaunch{
 		 truck.Selecttruckcategory(driver);
 		 truck.Selecttrucktype(driver);
 		 truck.ChooseRCDate(driver);
+		 truck.Truckimageupload(driver);
 		 truck.VehicleexpiryDate(driver);
 		 truck.VehicleRCimageupload(driver);
-		 truck.FitnessexpiryDate(driver);
-		 truck.Fitnessimageupload(driver);
 		 truck.PermitexpiryDate(driver);
 		 truck.PermitRCimageupload(driver);
+	     truck.FitnessexpiryDate(driver);
+	     truck.Fitnessimageupload(driver);
+	     truck.PollutionexpiryDate(driver);
+	 	 truck.Pollutionimageupload(driver);
 		 truck.InsuranceexpiryDate(driver);
 		 truck.Insuranceimageupload(driver);
-		 truck.PollutionexpiryDate(driver);
-		 truck.Pollutionimageupload(driver);
-		 truck.Truckimageupload(driver);
+		 truck.CreateTruck(driver);
+	
+		
 
 
 

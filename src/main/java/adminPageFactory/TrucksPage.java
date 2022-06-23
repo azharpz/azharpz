@@ -99,7 +99,7 @@ public class TrucksPage extends AdminData{
 	  WebElement  permitvehicleimage;
 	
 	
-	@FindBy(xpath="//input[@formcontrolname='permit_type_expiry']") 
+	@FindBy(xpath="//input[@formcontrolname='fitness_expiry']") 
 	  WebElement  fitnessexpirydate;
 	
 	@FindBy(xpath="(//span[contains(.,'Upload')])[3]") 
@@ -255,11 +255,10 @@ public void Truckimageupload(WebDriver driver) throws InterruptedException, IOEx
    // truckimageupload.sendKeys(getimageuploadpath());
 	  // driver.findElement(By.cssSelector("img[src='../../../assets/img/profile-upload.svg']")).sendKeys("D:\\azhar\\azhar\\company\\IMG_20190814_061616.jpg");
      truckimageupload.click();
-     Thread.sleep(10000);
      Runtime.getRuntime().exec(getimageuploadpath());
 
 }
-	 
+
 public void VehicleexpiryDate(WebDriver driver) throws InterruptedException, IOException
 {	
 	
@@ -312,60 +311,6 @@ public void VehicleRCimageupload(WebDriver driver) throws InterruptedException, 
      Runtime.getRuntime().exec(getimageuploadpath());
 
 }
-	 
-
-public void FitnessexpiryDate(WebDriver driver) throws InterruptedException, IOException
-{	
-	
-	
-	fitnessexpirydate.click();
- 	Thread.sleep(1000);
- while	(! Choosemonth.getText().contains("FEB"))
- {
-	 Next.click();
-	
-
-	 
- }
-	 
-	 List<WebElement>	dates=  dateselection;
-	 int count= dates.size();
-
-	 for(int j=0; j<count; j++)
-	 {
-	 String texts=	dates.get(j).getText();
-	 	if(texts.equalsIgnoreCase(getpermitexpirercdate()))
-	 	{
-	 		dates.get(j).click();
-	 		break;
-	 	}
-	 	
-	 	   
- } 
-	 
-	
-	 	  }
-
-public void Fitnessimageupload(WebDriver driver) throws InterruptedException, IOException
-
-
-
-{
-     
-     Thread.sleep(10000);
-    //   WebDriverWait wait = new WebDriverWait(driver, 50);
-	//	WebElement element = wait.until(ExpectedConditions.elementToBeClickable(truckimageupload));
-		//element.click();
-	//	element.sendKeys(getimageuploadpath());
-   //  rcvehicleimage.sendKeys(getimageuploadpath());
-	  // driver.findElement(By.cssSelector("img[src='../../../assets/img/profile-upload.svg']")).sendKeys("D:\\azhar\\azhar\\company\\IMG_20190814_061616.jpg");
-     fitnessvehicleimage.click();
-      Thread.sleep(5000);
-     Runtime.getRuntime().exec(getimageuploadpath());
-
-}
-	 
-
 
 public void PermitexpiryDate(WebDriver driver) throws InterruptedException, IOException
 {	
@@ -415,6 +360,57 @@ public void PermitRCimageupload(WebDriver driver) throws InterruptedException, I
    //  rcvehicleimage.sendKeys(getimageuploadpath());
 	  // driver.findElement(By.cssSelector("img[src='../../../assets/img/profile-upload.svg']")).sendKeys("D:\\azhar\\azhar\\company\\IMG_20190814_061616.jpg");
      permitvehicleimage.click();
+      Thread.sleep(5000);
+     Runtime.getRuntime().exec(getimageuploadpath());
+
+}
+
+public void FitnessexpiryDate(WebDriver driver) throws InterruptedException, IOException
+{	
+	
+	
+	fitnessexpirydate.click();
+ 	Thread.sleep(1000);
+ while	(! Choosemonth.getText().contains("FEB"))
+ {
+	 Next.click();
+	
+
+	 
+ }
+	 
+	 List<WebElement>	dates=  dateselection;
+	 int count= dates.size();
+
+	 for(int j=0; j<count; j++)
+	 {
+	 String texts=	dates.get(j).getText();
+	 	if(texts.equalsIgnoreCase(getpermitexpirercdate()))
+	 	{
+	 		dates.get(j).click();
+	 		break;
+	 	}
+	 	
+	 	   
+ } 
+	 
+	
+	 	  }
+
+public void Fitnessimageupload(WebDriver driver) throws InterruptedException, IOException
+
+
+
+{
+     
+     Thread.sleep(10000);
+    //   WebDriverWait wait = new WebDriverWait(driver, 50);
+	//	WebElement element = wait.until(ExpectedConditions.elementToBeClickable(truckimageupload));
+		//element.click();
+	//	element.sendKeys(getimageuploadpath());
+   //  rcvehicleimage.sendKeys(getimageuploadpath());
+	  // driver.findElement(By.cssSelector("img[src='../../../assets/img/profile-upload.svg']")).sendKeys("D:\\azhar\\azhar\\company\\IMG_20190814_061616.jpg");
+     fitnessvehicleimage.click();
       Thread.sleep(5000);
      Runtime.getRuntime().exec(getimageuploadpath());
 
@@ -472,7 +468,6 @@ public void Pollutionimageupload(WebDriver driver) throws InterruptedException, 
      Runtime.getRuntime().exec(getimageuploadpath());
 
 }
-
 
 public void InsuranceexpiryDate(WebDriver driver) throws InterruptedException, IOException
 {	
@@ -540,6 +535,9 @@ public void CreateTruck(WebDriver driver) throws InterruptedException, IOExcepti
      
 
 }
+
+	 
+
  	
  
 

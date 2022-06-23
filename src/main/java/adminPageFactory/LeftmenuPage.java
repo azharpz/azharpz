@@ -32,6 +32,9 @@ public class LeftmenuPage {
 	@FindBy(xpath="//button[normalize-space()='Trucks Type']") 
 	  WebElement  selecttrucktype;
 	
+	@FindBy(xpath="//h2[contains(.,'Drivers')]") 
+	  WebElement  selectdrivers;
+	
 	
 
 	
@@ -70,6 +73,16 @@ public void SelectTrucksTypes(WebDriver driver) throws InterruptedException, IOE
 
         selecttruckfrommenu.click();
         selecttrucktype.click();
+
+}
+
+public void SelectDrivers(WebDriver driver) throws InterruptedException, IOException
+
+
+
+{
+
+        selectdrivers.click();
 
 }
 

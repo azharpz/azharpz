@@ -86,8 +86,5 @@ public  String getpassword() throws IOException
 {
 	return getpropertyObject().getProperty("password");
 }
-// 202204662331001
 
-
-//202204662331002
 }
