@@ -9,7 +9,7 @@
      <test  name="S9 Sanity test">
    
  <classes>
- <class name="webTest.WebSelectCityTest"/> 
+ <class name="adminTest.LoginTest"/> 
 
 
   

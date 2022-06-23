@@ -21,7 +21,7 @@ public void trucktype(WebDriver driver) throws InterruptedException
 	
 	{
 
-	driver.findElement(By.xpath("//span[.='Truck Category']")).click();
+	 driver.findElement(By.xpath("//span[.='Truck Category']")).click();
 	 Thread.sleep(3000);
 	 
 	 List<WebElement>	truck=  driver.findElements(By.xpath("//mat-option[contains(@aria-disabled,'false')]"));
