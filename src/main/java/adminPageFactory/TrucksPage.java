@@ -1,5 +1,9 @@
 package adminPageFactory;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
@@ -175,7 +179,7 @@ public void Selecttruckcategory(WebDriver driver) throws InterruptedException
 
    System.out.println("no of truck category is   "  + trucktypes);
  
-   trucktype.get(2).click();
+   trucktype.get(1).click();
 
               
 }
@@ -184,9 +188,10 @@ public void Selecttruckcategory(WebDriver driver) throws InterruptedException
 public void Selecttrucktype(WebDriver driver) throws InterruptedException
 
 {
+	Thread.sleep(5000);
 
 	dependenttrucktype.click();
-     Thread.sleep(3000);
+     
  
     List<WebElement>	truck=  truckweight;
     Iterator<WebElement> itr=truck.iterator();
@@ -204,7 +209,7 @@ public void Selecttrucktype(WebDriver driver) throws InterruptedException
 
    System.out.println("no of truckweight is   "  + trucktypes);
  
-   truckweight.get(2).click();
+   truckweight.get(1).click();
 
               
 }
@@ -241,13 +246,13 @@ public void ChooseRCDate(WebDriver driver) throws InterruptedException, IOExcept
 	
 
 	}
-public void Truckimageupload(WebDriver driver) throws InterruptedException, IOException
+public void Truckimageupload(WebDriver driver) throws InterruptedException, IOException, AWTException
 
 
 
 {
      
-     Thread.sleep(10000);
+     Thread.sleep(2000);
     //   WebDriverWait wait = new WebDriverWait(driver, 50);
 	//	WebElement element = wait.until(ExpectedConditions.elementToBeClickable(truckimageupload));
 		//element.click();
@@ -255,7 +260,29 @@ public void Truckimageupload(WebDriver driver) throws InterruptedException, IOEx
    // truckimageupload.sendKeys(getimageuploadpath());
 	  // driver.findElement(By.cssSelector("img[src='../../../assets/img/profile-upload.svg']")).sendKeys("D:\\azhar\\azhar\\company\\IMG_20190814_061616.jpg");
      truckimageupload.click();
-     Runtime.getRuntime().exec(getimageuploadpath());
+   //  Runtime.getRuntime().exec(getimageuploadpath());
+     Robot rb = new Robot();
+   	rb.setAutoDelay(2000);
+   	StringSelection str = new StringSelection(getimageuploadpaths());
+       Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
+   	rb.setAutoDelay(2000);
+
+        // press Contol+V for pasting
+       rb.keyPress(java.awt.event.KeyEvent.VK_CONTROL);
+       rb.keyPress(java.awt.event.KeyEvent.VK_V);
+
+   	rb.setAutoDelay(2000);
+
+    
+       // release Contol+V for pasting
+     
+       rb.keyRelease(java.awt.event.KeyEvent.VK_CONTROL);
+       rb.keyRelease(java.awt.event.KeyEvent.VK_V);
+   	rb.setAutoDelay(2000);
+
+       // for pressing and releasing Enter
+       rb.keyPress(java.awt.event.KeyEvent.VK_ENTER);
+       rb.keyRelease(java.awt.event.KeyEvent.VK_ENTER);
 
 }
 
@@ -293,13 +320,13 @@ public void VehicleexpiryDate(WebDriver driver) throws InterruptedException, IOE
 
 
 
-public void VehicleRCimageupload(WebDriver driver) throws InterruptedException, IOException
+public void VehicleRCimageupload(WebDriver driver) throws InterruptedException, IOException, AWTException
 
 
 
 {
      
-     Thread.sleep(10000);
+   //  Thread.sleep(5000);
     //   WebDriverWait wait = new WebDriverWait(driver, 50);
 	//	WebElement element = wait.until(ExpectedConditions.elementToBeClickable(truckimageupload));
 		//element.click();
@@ -307,8 +334,29 @@ public void VehicleRCimageupload(WebDriver driver) throws InterruptedException, 
    //  rcvehicleimage.sendKeys(getimageuploadpath());
 	  // driver.findElement(By.cssSelector("img[src='../../../assets/img/profile-upload.svg']")).sendKeys("D:\\azhar\\azhar\\company\\IMG_20190814_061616.jpg");
        rcvehicleimage.click();
-      Thread.sleep(5000);
-     Runtime.getRuntime().exec(getimageuploadpath());
+    // Runtime.getRuntime().exec(getimageuploadpath());
+       Robot rb = new Robot();
+     	rb.setAutoDelay(2000);
+     	StringSelection str = new StringSelection(getimageuploadpaths());
+         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
+     	rb.setAutoDelay(2000);
+
+          // press Contol+V for pasting
+         rb.keyPress(java.awt.event.KeyEvent.VK_CONTROL);
+         rb.keyPress(java.awt.event.KeyEvent.VK_V);
+
+     	rb.setAutoDelay(2000);
+
+      
+         // release Contol+V for pasting
+       
+         rb.keyRelease(java.awt.event.KeyEvent.VK_CONTROL);
+         rb.keyRelease(java.awt.event.KeyEvent.VK_V);
+     	rb.setAutoDelay(2000);
+
+         // for pressing and releasing Enter
+         rb.keyPress(java.awt.event.KeyEvent.VK_ENTER);
+         rb.keyRelease(java.awt.event.KeyEvent.VK_ENTER);
 
 }
 
@@ -346,13 +394,13 @@ public void PermitexpiryDate(WebDriver driver) throws InterruptedException, IOEx
 
 
 
-public void PermitRCimageupload(WebDriver driver) throws InterruptedException, IOException
+public void PermitRCimageupload(WebDriver driver) throws InterruptedException, IOException, AWTException
 
 
 
 {
      
-     Thread.sleep(10000);
+    Thread.sleep(10000);
     //   WebDriverWait wait = new WebDriverWait(driver, 50);
 	//	WebElement element = wait.until(ExpectedConditions.elementToBeClickable(truckimageupload));
 		//element.click();
@@ -360,8 +408,29 @@ public void PermitRCimageupload(WebDriver driver) throws InterruptedException, I
    //  rcvehicleimage.sendKeys(getimageuploadpath());
 	  // driver.findElement(By.cssSelector("img[src='../../../assets/img/profile-upload.svg']")).sendKeys("D:\\azhar\\azhar\\company\\IMG_20190814_061616.jpg");
      permitvehicleimage.click();
-      Thread.sleep(5000);
-     Runtime.getRuntime().exec(getimageuploadpath());
+  //   Runtime.getRuntime().exec(getimageuploadpath());
+     Robot rb = new Robot();
+   	rb.setAutoDelay(2000);
+   	StringSelection str = new StringSelection(getimageuploadpaths());
+       Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
+   	rb.setAutoDelay(2000);
+
+        // press Contol+V for pasting
+       rb.keyPress(java.awt.event.KeyEvent.VK_CONTROL);
+       rb.keyPress(java.awt.event.KeyEvent.VK_V);
+
+   	rb.setAutoDelay(2000);
+
+    
+       // release Contol+V for pasting
+     
+       rb.keyRelease(java.awt.event.KeyEvent.VK_CONTROL);
+       rb.keyRelease(java.awt.event.KeyEvent.VK_V);
+   	rb.setAutoDelay(2000);
+
+       // for pressing and releasing Enter
+       rb.keyPress(java.awt.event.KeyEvent.VK_ENTER);
+       rb.keyRelease(java.awt.event.KeyEvent.VK_ENTER);
 
 }
 
@@ -397,7 +466,7 @@ public void FitnessexpiryDate(WebDriver driver) throws InterruptedException, IOE
 	
 	 	  }
 
-public void Fitnessimageupload(WebDriver driver) throws InterruptedException, IOException
+public void Fitnessimageupload(WebDriver driver) throws InterruptedException, IOException, AWTException
 
 
 
@@ -411,8 +480,29 @@ public void Fitnessimageupload(WebDriver driver) throws InterruptedException, IO
    //  rcvehicleimage.sendKeys(getimageuploadpath());
 	  // driver.findElement(By.cssSelector("img[src='../../../assets/img/profile-upload.svg']")).sendKeys("D:\\azhar\\azhar\\company\\IMG_20190814_061616.jpg");
      fitnessvehicleimage.click();
-      Thread.sleep(5000);
-     Runtime.getRuntime().exec(getimageuploadpath());
+   //  Runtime.getRuntime().exec(getimageuploadpath());
+     Robot rb = new Robot();
+   	rb.setAutoDelay(2000);
+   	StringSelection str = new StringSelection(getimageuploadpaths());
+       Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
+   	rb.setAutoDelay(2000);
+
+        // press Contol+V for pasting
+       rb.keyPress(java.awt.event.KeyEvent.VK_CONTROL);
+       rb.keyPress(java.awt.event.KeyEvent.VK_V);
+
+   	rb.setAutoDelay(2000);
+
+    
+       // release Contol+V for pasting
+     
+       rb.keyRelease(java.awt.event.KeyEvent.VK_CONTROL);
+       rb.keyRelease(java.awt.event.KeyEvent.VK_V);
+   	rb.setAutoDelay(2000);
+
+       // for pressing and releasing Enter
+       rb.keyPress(java.awt.event.KeyEvent.VK_ENTER);
+       rb.keyRelease(java.awt.event.KeyEvent.VK_ENTER);
 
 }
 
@@ -450,13 +540,13 @@ public void PollutionexpiryDate(WebDriver driver) throws InterruptedException, I
 
 
 
-public void Pollutionimageupload(WebDriver driver) throws InterruptedException, IOException
+public void Pollutionimageupload(WebDriver driver) throws InterruptedException, IOException, AWTException
 
 
 
 {
      
-     Thread.sleep(10000);
+   Thread.sleep(10000);
     //   WebDriverWait wait = new WebDriverWait(driver, 50);
 	//	WebElement element = wait.until(ExpectedConditions.elementToBeClickable(truckimageupload));
 		//element.click();
@@ -464,8 +554,29 @@ public void Pollutionimageupload(WebDriver driver) throws InterruptedException, 
    //  rcvehicleimage.sendKeys(getimageuploadpath());
 	  // driver.findElement(By.cssSelector("img[src='../../../assets/img/profile-upload.svg']")).sendKeys("D:\\azhar\\azhar\\company\\IMG_20190814_061616.jpg");
      pollutionimage.click();
-      Thread.sleep(5000);
-     Runtime.getRuntime().exec(getimageuploadpath());
+   //  Runtime.getRuntime().exec(getimageuploadpath());
+     Robot rb = new Robot();
+   	rb.setAutoDelay(2000);
+   	StringSelection str = new StringSelection(getimageuploadpaths());
+       Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
+   	rb.setAutoDelay(2000);
+
+        // press Contol+V for pasting
+       rb.keyPress(java.awt.event.KeyEvent.VK_CONTROL);
+       rb.keyPress(java.awt.event.KeyEvent.VK_V);
+
+   	rb.setAutoDelay(2000);
+
+    
+       // release Contol+V for pasting
+     
+       rb.keyRelease(java.awt.event.KeyEvent.VK_CONTROL);
+       rb.keyRelease(java.awt.event.KeyEvent.VK_V);
+   	rb.setAutoDelay(2000);
+
+       // for pressing and releasing Enter
+       rb.keyPress(java.awt.event.KeyEvent.VK_ENTER);
+       rb.keyRelease(java.awt.event.KeyEvent.VK_ENTER);
 
 }
 
@@ -503,12 +614,12 @@ public void InsuranceexpiryDate(WebDriver driver) throws InterruptedException, I
 
 
 
-public void Insuranceimageupload(WebDriver driver) throws InterruptedException, IOException
+public void Insuranceimageupload(WebDriver driver) throws InterruptedException, IOException, AWTException
 
 
 
 {
-     Thread.sleep(10000);
+    Thread.sleep(10000);
     //   WebDriverWait wait = new WebDriverWait(driver, 50);
 	//	WebElement element = wait.until(ExpectedConditions.elementToBeClickable(truckimageupload));
 		//element.click();
@@ -517,8 +628,29 @@ public void Insuranceimageupload(WebDriver driver) throws InterruptedException, 
 	  // driver.findElement(By.cssSelector("img[src='../../../assets/img/profile-upload.svg']")).sendKeys("D:\\azhar\\azhar\\company\\IMG_20190814_061616.jpg");
      insuranceimage.click();
    
-      Thread.sleep(5000);
-     Runtime.getRuntime().exec(getimageuploadpath());
+   //  Runtime.getRuntime().exec(getimageuploadpath());
+     Robot rb = new Robot();
+   	rb.setAutoDelay(3000);
+   	StringSelection str = new StringSelection(getimageuploadpaths());
+       Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
+   	rb.setAutoDelay(2000);
+
+        // press Contol+V for pasting
+       rb.keyPress(java.awt.event.KeyEvent.VK_CONTROL);
+       rb.keyPress(java.awt.event.KeyEvent.VK_V);
+
+   	rb.setAutoDelay(2000);
+
+    
+       // release Contol+V for pasting
+     
+       rb.keyRelease(java.awt.event.KeyEvent.VK_CONTROL);
+       rb.keyRelease(java.awt.event.KeyEvent.VK_V);
+   	rb.setAutoDelay(2000);
+
+       // for pressing and releasing Enter
+       rb.keyPress(java.awt.event.KeyEvent.VK_ENTER);
+       rb.keyRelease(java.awt.event.KeyEvent.VK_ENTER);
 
 }
 	 
@@ -529,7 +661,7 @@ public void CreateTruck(WebDriver driver) throws InterruptedException, IOExcepti
 
 {
      
-     Thread.sleep(5000);
+     Thread.sleep(50000);
     
      CreateTruck.click();
      
@@ -598,5 +730,10 @@ public  String getpermitexpirercdate() throws IOException
 public  String getfitnessexpirercdate() throws IOException
 {
 	return getpropertyObject().getProperty("permitrcexpiredate");
+}
+
+public  String getimageuploadpaths() throws IOException
+{
+	return getpropertyObject().getProperty("pathimage");
 }
 }

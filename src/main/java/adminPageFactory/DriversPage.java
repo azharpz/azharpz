@@ -1,5 +1,9 @@
 package adminPageFactory;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
@@ -73,16 +77,16 @@ public class DriversPage extends AdminData{
 	@FindBy(xpath="//mat-select[@formcontrolname='gender']") 
 	  WebElement  gender;
 	
-	@FindBy(xpath="//input[@formcontrolname='license_expiry_date']") 
+	@FindBy(xpath="(//*[local-name()='path'])[1]") 
 	  WebElement  license_expiry_date;
 	
-	@FindBy(xpath="//input[@formcontrolname='driving_license_expiry']") 
+	@FindBy(xpath="(//*[local-name()='path'])[3]") 
 	  WebElement  driving_license_expiry;
 	
-	@FindBy(xpath="//input[@formcontrolname='insurance_expiry']") 
+	@FindBy(xpath="(//*[local-name()='path'])[4]") 
 	  WebElement  insurance_expiry;
 	
-	@FindBy(xpath="/html[1]/body[1]/div[1]/div[2]/div[1]/mat-dialog-container[1]/app-admin-add-driver[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[2]/div[3]/div[2]/div[1]/mat-form-field[1]/div[1]/div[1]/div[2]/mat-datepicker-toggle[1]/button[1]/span[1]/*[name()='svg'][1]/*[name()='path'][1]") 
+	@FindBy(xpath="(//*[local-name()='path'])[2]") 
 	  WebElement  dob;
 	
 
@@ -104,14 +108,20 @@ public class DriversPage extends AdminData{
 	  WebElement  driverimageupload;
 	
 
-	@FindBy(css="(//a[contains(.,'Upload')])[1]") 
+	@FindBy(xpath="//body[1]/div[2]/div[2]/div[1]/mat-dialog-container[1]/app-admin-add-driver[1]/div[1]/div[1]/div[2]/form[3]/div[1]/div[1]/div[1]/div[3]/div[1]/span[1]") 
 	  WebElement  licenseimageupload;
 	
-	@FindBy(css="(//a[contains(.,'Upload')])[2]") 
+	@FindBy(xpath="/html[1]/body[1]/div[2]/div[2]/div[1]/mat-dialog-container[1]/app-admin-add-driver[1]/div[1]/div[1]/div[2]/form[3]/div[1]/div[1]/div[2]/div[3]/div[1]/span[1]") 
 	  WebElement  insuranceimageupload;
 	
-	@FindBy(css="//button[normalize-space()='save']") 
+	@FindBy(xpath="//button[normalize-space()='save']") 
 	  WebElement  createdriver;
+	
+	@FindBy(xpath="//div[@class='mat-calendar-body-cell-content mat-focus-indicator mat-calendar-body-today']") 
+	  WebElement  todaysdate;
+	
+	@FindBy(xpath="(//a[.='Send OTP'])[1]") 
+	  WebElement  SendOTP;
 	
 
 public void Addbbutton(WebDriver driver) throws InterruptedException, IOException
@@ -125,6 +135,18 @@ public void Addbbutton(WebDriver driver) throws InterruptedException, IOExceptio
 
 }
 
+public void todaysdob(WebDriver driver) throws InterruptedException, IOException
+
+
+
+{
+	dob.click();
+ 	Thread.sleep(1000);
+ 	todaysdate.click();
+ 	
+
+}
+
 
 	
 public void Adddriversdetail(WebDriver driver) throws InterruptedException, IOException
@@ -133,10 +155,12 @@ public void Adddriversdetail(WebDriver driver) throws InterruptedException, IOEx
 	
 	{
     
-	Thread.sleep(3000);
+	Thread.sleep(1000);
 
 	name.sendKeys(getname());
 	mobileno.sendKeys(getmob());
+	SendOTP.click();
+	Thread.sleep(6000);
 	email.sendKeys(getemail());
 	licenceno.sendKeys(getliscenceno());
 	emergencyno.sendKeys(getemergencyno());
@@ -150,7 +174,8 @@ public void Addcontactdetail(WebDriver driver) throws InterruptedException, IOEx
 {
 
        Thread.sleep(3000);
-
+       JavascriptExecutor js1 = (JavascriptExecutor) driver;
+   	   js1.executeScript("window.scrollBy(0,350)", "");
        contactname.sendKeys(getcontactname());
        area.sendKeys(getarea());
        address_line.sendKeys(getaddressline());
@@ -191,7 +216,7 @@ public void Selecttruckcategory(WebDriver driver) throws InterruptedException
 
    System.out.println("no of truck category is   "  + trucktypes);
  
-   truckno.get(2).click();
+   truckno.get(1).click();
 
               
 }
@@ -224,13 +249,13 @@ public void Gender(WebDriver driver) throws InterruptedException
               
 }
 
-public void Driverimageupload(WebDriver driver) throws InterruptedException, IOException
+public void Driverimageupload(WebDriver driver) throws InterruptedException, IOException, AWTException
 
 
 
 {
      
-     Thread.sleep(10000);
+     Thread.sleep(1000);
     //   WebDriverWait wait = new WebDriverWait(driver, 50);
 	//	WebElement element = wait.until(ExpectedConditions.elementToBeClickable(truckimageupload));
 		//element.click();
@@ -238,15 +263,65 @@ public void Driverimageupload(WebDriver driver) throws InterruptedException, IOE
    // truckimageupload.sendKeys(getimageuploadpath());
 	  // driver.findElement(By.cssSelector("img[src='../../../assets/img/profile-upload.svg']")).sendKeys("D:\\azhar\\azhar\\company\\IMG_20190814_061616.jpg");
      driverimageupload.click();
-     Runtime.getRuntime().exec(getimageuploadpath());
+     Robot rb = new Robot();
+ 	rb.setAutoDelay(2000);
+ 	StringSelection str = new StringSelection(getimageuploadpaths());
+     Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
+ 	rb.setAutoDelay(2000);
+
+      // press Contol+V for pasting
+     rb.keyPress(java.awt.event.KeyEvent.VK_CONTROL);
+     rb.keyPress(java.awt.event.KeyEvent.VK_V);
+
+ 	rb.setAutoDelay(2000);
+
+  
+     // release Contol+V for pasting
+   
+     rb.keyRelease(java.awt.event.KeyEvent.VK_CONTROL);
+     rb.keyRelease(java.awt.event.KeyEvent.VK_V);
+ 	rb.setAutoDelay(2000);
+
+     // for pressing and releasing Enter
+     rb.keyPress(java.awt.event.KeyEvent.VK_ENTER);
+     rb.keyRelease(java.awt.event.KeyEvent.VK_ENTER);
+   //  Runtime.getRuntime().exec(getimageuploadpath());
 
 }
 
 public void DrivingexpiryDate(WebDriver driver) throws InterruptedException, IOException
 {	
-	
+	 
 	
 	driving_license_expiry.click();
+ 	Thread.sleep(1000);
+ while	(! Choosemonth.getText().contains("FEB"))
+ {
+	 Next.click();
+	
+
+	 
+ }
+	 
+	 List<WebElement>	dates=  dateselection;
+	 int count= dates.size();
+
+	 for(int j=0; j<count; j++)
+	 {
+	 String texts=	dates.get(j).getText();
+	 	if(texts.equalsIgnoreCase(getfitnessexpirercdate()))
+	 	{
+	 		dates.get(j).click();
+	 		break;
+	 	}
+	 } 	
+	 	   
+ } 
+
+public void expiryDate(WebDriver driver) throws InterruptedException, IOException
+{	
+	 
+	   license_expiry_date.click();
  	Thread.sleep(1000);
  while	(! Choosemonth.getText().contains("FEB"))
  {
@@ -277,9 +352,9 @@ public void DOB(WebDriver driver) throws InterruptedException, IOException
 	
 	dob.click();
  	Thread.sleep(1000);
- while	(! Previous.getText().contains("FEB"))
+ while	(! Previous.getText().contains("JAN"))
  {
-	 Next.click();
+	 Previous.click();
 	
 
 	 
@@ -300,13 +375,14 @@ public void DOB(WebDriver driver) throws InterruptedException, IOException
 	 	   
  } 
 
-public void Driverlicensceimageupload(WebDriver driver) throws InterruptedException, IOException
+public void Driverlicensceimageupload(WebDriver driver) throws InterruptedException, IOException, AWTException
 
 
 
 {
+	Thread.sleep(3000);
      
-     Thread.sleep(10000);
+	
     //   WebDriverWait wait = new WebDriverWait(driver, 50);
 	//	WebElement element = wait.until(ExpectedConditions.elementToBeClickable(truckimageupload));
 		//element.click();
@@ -314,7 +390,29 @@ public void Driverlicensceimageupload(WebDriver driver) throws InterruptedExcept
    // truckimageupload.sendKeys(getimageuploadpath());
 	  // driver.findElement(By.cssSelector("img[src='../../../assets/img/profile-upload.svg']")).sendKeys("D:\\azhar\\azhar\\company\\IMG_20190814_061616.jpg");
      licenseimageupload.click();
-     Runtime.getRuntime().exec(getimageuploadpath());
+     Robot rb = new Robot();
+  	rb.setAutoDelay(2000);
+  	StringSelection str = new StringSelection(getimageuploadpaths());
+      Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
+  	rb.setAutoDelay(2000);
+
+       // press Contol+V for pasting
+      rb.keyPress(java.awt.event.KeyEvent.VK_CONTROL);
+      rb.keyPress(java.awt.event.KeyEvent.VK_V);
+
+  	rb.setAutoDelay(2000);
+
+   
+      // release Contol+V for pasting
+    
+      rb.keyRelease(java.awt.event.KeyEvent.VK_CONTROL);
+      rb.keyRelease(java.awt.event.KeyEvent.VK_V);
+  	rb.setAutoDelay(2000);
+
+      // for pressing and releasing Enter
+      rb.keyPress(java.awt.event.KeyEvent.VK_ENTER);
+      rb.keyRelease(java.awt.event.KeyEvent.VK_ENTER);
+   //  Runtime.getRuntime().exec(getimageuploadpath());
 
 }
 
@@ -347,13 +445,12 @@ public void DrivinglicenseexpiryDate(WebDriver driver) throws InterruptedExcepti
 	 	   
  } 
 
-public void Insuranceimageupload(WebDriver driver) throws InterruptedException, IOException
+public void Insuranceimageupload(WebDriver driver) throws InterruptedException, IOException, AWTException
 
 
 
 {
-     
-     Thread.sleep(10000);
+	Thread.sleep(1000);
     //   WebDriverWait wait = new WebDriverWait(driver, 50);
 	//	WebElement element = wait.until(ExpectedConditions.elementToBeClickable(truckimageupload));
 		//element.click();
@@ -361,7 +458,29 @@ public void Insuranceimageupload(WebDriver driver) throws InterruptedException, 
    // truckimageupload.sendKeys(getimageuploadpath());
 	  // driver.findElement(By.cssSelector("img[src='../../../assets/img/profile-upload.svg']")).sendKeys("D:\\azhar\\azhar\\company\\IMG_20190814_061616.jpg");
      insuranceimageupload.click();
-     Runtime.getRuntime().exec(getimageuploadpath());
+     Robot rb = new Robot();
+  	rb.setAutoDelay(2000);
+  	StringSelection str = new StringSelection(getimageuploadpaths());
+      Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
+  	rb.setAutoDelay(2000);
+
+       // press Contol+V for pasting
+      rb.keyPress(java.awt.event.KeyEvent.VK_CONTROL);
+      rb.keyPress(java.awt.event.KeyEvent.VK_V);
+
+  	rb.setAutoDelay(2000);
+
+   
+      // release Contol+V for pasting
+    
+      rb.keyRelease(java.awt.event.KeyEvent.VK_CONTROL);
+      rb.keyRelease(java.awt.event.KeyEvent.VK_V);
+  	rb.setAutoDelay(2000);
+
+      // for pressing and releasing Enter
+      rb.keyPress(java.awt.event.KeyEvent.VK_ENTER);
+      rb.keyRelease(java.awt.event.KeyEvent.VK_ENTER);
+   //  Runtime.getRuntime().exec(getimageuploadpath());
 
 }
 
@@ -403,7 +522,7 @@ public void CreateDriver(WebDriver driver) throws InterruptedException, IOExcept
 
 {
      
-     Thread.sleep(5000);
+     Thread.sleep(40000);
     
      createdriver.click();
      
@@ -479,6 +598,11 @@ public  String getgst() throws IOException
 public  String getfitnessexpirercdate() throws IOException
 {
 	return getpropertyObject().getProperty("permitrcexpiredate");
+}
+
+public  String getimageuploadpaths() throws IOException
+{
+	return getpropertyObject().getProperty("pathimage");
 }
 }
 

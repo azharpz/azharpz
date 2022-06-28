@@ -4,27 +4,41 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import adminPageFactory.LoginPage;
+
 public class AdminLaunch {
 	
 	FileInputStream reader;
-    Properties p;
+    static Properties p;
+	
+	public static WebDriver driver;
+
 
 public  WebDriver capabilities() throws IOException {
 	// TODO Auto-generated method stub
 //System.setProperty("webdriver.chrome.driver", "D:\\Automationcode\\RobustFramework\\src\\main\\java\\utilities\\chromedriver.exe");
 	 
-		 
+	 
+	 //String log4jpath=System.getProperty("user.dir");
+		//InputStream reader=new FileInputStream(log4jpath+"\\src\\main\\java\\utilities\\chromedriver.exe");  
+		//PropertyConfigurator.configure(reader);
+
+	
 		
-	System.setProperty("webdriver.chrome.driver", getpath());
+	   System.setProperty("webdriver.chrome.driver", getpath());
 
    WebDriver driver=new ChromeDriver();
 	driver.manage().window().maximize();
@@ -120,7 +134,12 @@ FileReader reader=new FileReader("C:\\Users\\user\\eclipse-workspace\\RobustFram
 
 //}
 
-}
+    
+   }
+
+
+
+
 public  String geturl() throws IOException
 {
 	return getpropertyObject().getProperty("url");

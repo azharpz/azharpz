@@ -1,5 +1,6 @@
 package adminTest;
 
+import java.awt.AWTException;
 import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
@@ -14,7 +15,7 @@ import resources.AdminLaunch;
 public class TrucksTest extends AdminLaunch{
 	
 	@Test
-	public  void addtruck() throws IOException, InterruptedException 
+	public  void addtruck() throws IOException, InterruptedException, AWTException 
     {
 	
 		 WebDriver driver=capabilities();
@@ -33,17 +34,24 @@ public class TrucksTest extends AdminLaunch{
 		 truck.Selecttruckcategory(driver);
 		 truck.Selecttrucktype(driver);
 		 truck.ChooseRCDate(driver);
-		 truck.Truckimageupload(driver);
+		                                                     
 		 truck.VehicleexpiryDate(driver);
-		 truck.VehicleRCimageupload(driver);
+		
 		 truck.PermitexpiryDate(driver);
-		 truck.PermitRCimageupload(driver);
+		 
 	     truck.FitnessexpiryDate(driver);
-	     truck.Fitnessimageupload(driver);
+	     
 	     truck.PollutionexpiryDate(driver);
-	 	 truck.Pollutionimageupload(driver);
+	 	
 		 truck.InsuranceexpiryDate(driver);
+		 
+		 truck.Truckimageupload(driver);
+		 truck.VehicleRCimageupload(driver);
+		 truck.PermitRCimageupload(driver);
+		 
+		 truck.Pollutionimageupload(driver);
 		 truck.Insuranceimageupload(driver);
+		 truck.Fitnessimageupload(driver);
 		 truck.CreateTruck(driver);
 	
 		

@@ -1,5 +1,6 @@
 package adminTest;
 
+import java.awt.AWTException;
 import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
@@ -15,7 +16,7 @@ import resources.AdminLaunch;
 public class TruckCategoryTest extends AdminLaunch{
 	
 	@Test
-	public  void addtruckcategory() throws IOException, InterruptedException 
+	public  void addtruckcategory() throws IOException, InterruptedException, AWTException 
     {
 	
 		 WebDriver driver=capabilities();

@@ -4,13 +4,13 @@
   <listeners>
     <listener class-name="webTest.Listeners"/>
   </listeners>
-  <test thread-count="5" name="Zee Business Sanity test(failed)">
+  <test thread-count="5" name="S9 Sanity test(failed)">
     <classes>
-      <class name="webTest.EmailLoginTest">
+      <class name="adminTest.TruckCategoryTest">
         <methods>
-          <include name="TC_1_Login"/>
+          <include name="addtruckcategory"/>
         </methods>
-      </class> <!-- webTest.EmailLoginTest -->
+      </class> <!-- adminTest.TruckCategoryTest -->
     </classes>
-  </test> <!-- Zee Business Sanity test(failed) -->
+  </test> <!-- S9 Sanity test(failed) -->
 </suite> <!-- Failed suite [auto application] -->

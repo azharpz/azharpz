@@ -7,7 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
 import adminPageFactory.LoginPage;
-import pageObject.WebLoginNew;
 import resources.AdminLaunch;
 
 public class LoginTest extends AdminLaunch{
