@@ -87,7 +87,7 @@ js.executeScript("window.scrollBy(0,450)", "");
 
 	float tax2percentageof12 =totalestimate*12/100 ;
 	System.out.println("Actual tax2  with 12%  is "  +tax2percentageof12);
-	softAssert.assertEquals(tax2percentageof12, totalestimate);
+	//softAssert.assertEquals(tax2percentageof12, totalestimate);
 
 	
 	int expectedtotalprice = totalestimate+expectedtaxtotal;

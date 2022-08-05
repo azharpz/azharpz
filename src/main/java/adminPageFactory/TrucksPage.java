@@ -192,7 +192,7 @@ public void Selecttrucktype(WebDriver driver) throws InterruptedException
 
 	dependenttrucktype.click();
      
- 
+	//dropdown(truckweight);
     List<WebElement>	truck=  truckweight;
     Iterator<WebElement> itr=truck.iterator();
     int i=1;
@@ -326,7 +326,7 @@ public void VehicleRCimageupload(WebDriver driver) throws InterruptedException, 
 
 {
      
-   //  Thread.sleep(5000);
+    Thread.sleep(2000);
     //   WebDriverWait wait = new WebDriverWait(driver, 50);
 	//	WebElement element = wait.until(ExpectedConditions.elementToBeClickable(truckimageupload));
 		//element.click();
@@ -400,7 +400,7 @@ public void PermitRCimageupload(WebDriver driver) throws InterruptedException, I
 
 {
      
-    Thread.sleep(10000);
+    Thread.sleep(2000);
     //   WebDriverWait wait = new WebDriverWait(driver, 50);
 	//	WebElement element = wait.until(ExpectedConditions.elementToBeClickable(truckimageupload));
 		//element.click();
@@ -472,7 +472,7 @@ public void Fitnessimageupload(WebDriver driver) throws InterruptedException, IO
 
 {
      
-     Thread.sleep(10000);
+    Thread.sleep(2000);
     //   WebDriverWait wait = new WebDriverWait(driver, 50);
 	//	WebElement element = wait.until(ExpectedConditions.elementToBeClickable(truckimageupload));
 		//element.click();
@@ -491,7 +491,7 @@ public void Fitnessimageupload(WebDriver driver) throws InterruptedException, IO
        rb.keyPress(java.awt.event.KeyEvent.VK_CONTROL);
        rb.keyPress(java.awt.event.KeyEvent.VK_V);
 
-   	rb.setAutoDelay(2000);
+   	rb.setAutoDelay(3000);
 
     
        // release Contol+V for pasting
@@ -546,7 +546,7 @@ public void Pollutionimageupload(WebDriver driver) throws InterruptedException, 
 
 {
      
-   Thread.sleep(10000);
+    Thread.sleep(2000);
     //   WebDriverWait wait = new WebDriverWait(driver, 50);
 	//	WebElement element = wait.until(ExpectedConditions.elementToBeClickable(truckimageupload));
 		//element.click();
@@ -619,7 +619,7 @@ public void Insuranceimageupload(WebDriver driver) throws InterruptedException, 
 
 
 {
-    Thread.sleep(10000);
+    Thread.sleep(2000);
     //   WebDriverWait wait = new WebDriverWait(driver, 50);
 	//	WebElement element = wait.until(ExpectedConditions.elementToBeClickable(truckimageupload));
 		//element.click();
@@ -661,7 +661,7 @@ public void CreateTruck(WebDriver driver) throws InterruptedException, IOExcepti
 
 {
      
-     Thread.sleep(50000);
+     Thread.sleep(70000);
     
      CreateTruck.click();
      

@@ -20,20 +20,23 @@ public class LeftmenuPage {
 
 	
 	
-	@FindBy(xpath="//h2[normalize-space()='Trucks']") 
+	@FindBy(xpath="(//span[text()='Trucks'])[1]") 
 	WebElement selecttruckfrommenu;
 	
-	@FindBy(xpath="//button[normalize-space()='Trucks']") 
+	@FindBy(xpath="(//span[text()='Trucks'])[2]") 
 	WebElement selecttruck;
 	
-	@FindBy(how=How.XPATH,using="//button[normalize-space()='Trucks Category']") 
+	@FindBy(how=How.XPATH,using="//span[.='Trucks Category']") 
 	WebElement selecttruckcategory;
 	
-	@FindBy(xpath="//button[normalize-space()='Trucks Type']") 
+	@FindBy(xpath="//span[.='Trucks Type']") 
 	  WebElement  selecttrucktype;
 	
 	@FindBy(xpath="//h2[contains(.,'Drivers')]") 
 	  WebElement  selectdrivers;
+	
+	@FindBy(xpath="//h2[normalize-space()='Tax']") 
+	  WebElement  selecttax;
 	
 	
 
@@ -83,6 +86,16 @@ public void SelectDrivers(WebDriver driver) throws InterruptedException, IOExcep
 {
 
         selectdrivers.click();
+
+}
+
+public void SelectTax(WebDriver driver) throws InterruptedException, IOException
+
+
+
+{
+
+	selecttax.click();
 
 }
 

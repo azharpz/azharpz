@@ -21,8 +21,26 @@ public class AndroidS9TruckCategory extends MobileData {
 		Thread.sleep(3000);
 		
 
-		driver.findElementById("com.s9truck.customer:id/imgTruck").click();
+		driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/androidx.recyclerview.widget.RecyclerView/androidx.appcompat.widget.LinearLayoutCompat[2]").click();
 		}
+	
+	public static void truckWeights(AndroidDriver<AndroidElement> driver) throws InterruptedException
+
+	{
+   
+		
+		driver.findElementById("com.s9truck.customer:id/spinnerWeight").click();
+		Thread.sleep(3000);
+		
+		driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[2]").click();
+
+
+		
+	
+				
+                    
+	}
+	
 	
 	public static void truckWeight(AndroidDriver<AndroidElement> driver) throws InterruptedException
 
@@ -53,7 +71,7 @@ public class AndroidS9TruckCategory extends MobileData {
 			 for(int j=0; j<totaltons; j++)
 		{
 		String weight=	driver.findElementsByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView").get(j).getText();
-			if(weight.equalsIgnoreCase("10 Ton"))
+			if(weight.equalsIgnoreCase("32 Ton"))
 			{
 		
 		
