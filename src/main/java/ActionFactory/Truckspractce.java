@@ -35,7 +35,7 @@ public class Truckspractce extends AdminData{
 	WebElement trucknumber;
 	
 	@FindBy(xpath="//input[@formcontrolname='home_location']") 
-	WebElement homelocation;
+	List<WebElement> homelocation;
 	
 	@FindBy(how=How.XPATH,using="//input[@formcontrolname='make_name']") 
 	WebElement make_name;
@@ -54,7 +54,7 @@ public class Truckspractce extends AdminData{
 
 	{
 	  
-	    homelocation.click();
+	   // homelocation.click();
 	   
 	     Robot rb = new Robot();
 	   	rb.setAutoDelay(3000);
@@ -78,6 +78,16 @@ public class Truckspractce extends AdminData{
 	       // for pressing and releasing Enter
 	       rb.keyPress(java.awt.event.KeyEvent.VK_ENTER);
 	       rb.keyRelease(java.awt.event.KeyEvent.VK_ENTER);
+	       
+	       List<WebElement>  test=homelocation;
+	       
+	       int count=test.size();
+	       
+	      
+	    		  
+	    	  }
+	      
+	       
 
 	}
-}
+

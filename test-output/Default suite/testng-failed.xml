@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="androidTest.AndroidS9TruckCategoryTest">
+      <class name="adminTest.LoginTest">
         <methods>
-          <include name="selectTruckTypes"/>
+          <include name="login"/>
         </methods>
-      </class> <!-- androidTest.AndroidS9TruckCategoryTest -->
+      </class> <!-- adminTest.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
